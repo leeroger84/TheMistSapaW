@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mist Sapa - Digital Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FCF9F2;
+            --text-main: #1A1A1A;
+            --accent: #8D734A;
+            --border: #E2DDD3;
+            --meta-text: #666;
+            --red-wine: #9B1B30;
+            --white-wine: #B59410;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-main); font-family: 'Noto Sans KR', sans-serif; line-height: 1.6; }
+
+        /* Navigation */
+        .sticky-nav {
+            position: sticky; top: 0; background-color: rgba(252, 249, 242, 0.98);
+            display: flex; justify-content: center; gap: 20px; padding: 15px 0;
+            border-bottom: 1px solid var(--border); z-index: 1000; backdrop-filter: blur(10px);
+        }
+        .sticky-nav a { text-decoration: none; color: var(--text-main); font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+
+        header { padding: 60px 20px 30px; text-align: center; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .philosophy { max-width: 500px; margin: 0 auto; font-size: 0.95rem; color: #555; font-style: italic; }
+
+        .container { padding: 0 20px 100px; max-width: 650px; margin: 0 auto; }
+        .category-section { margin-top: 80px; scroll-margin-top: 80px; }
+        .category-header { text-align: center; margin-bottom: 50px; }
+        .category-name { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 8px; }
+        .category-desc { font-size: 0.85rem; color: #888; font-style: italic; display: block; margin-top: 5px; }
+
+        /* Wine Item */
+        .wine-item { margin-bottom: 40px; padding-bottom: 25px; border-bottom: 1px solid rgba(226, 221, 211, 0.6); }
+        .wine-meta { 
+            font-size: 0.75rem; color: var(--meta-text); margin-bottom: 10px; 
+            text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; 
+        }
+        .wine-meta .divider { color: var(--border); }
+        .wine-meta .variety { color: var(--accent); font-weight: 500; }
+
+        .wine-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .wine-name { 
+            font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; 
+            flex: 1; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; line-height: 1.3; 
+        }
+        .wine-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .dot-red { background-color: var(--red-wine); }
+        .dot-white { background-color: var(--white-wine); }
+
+        .type-badge {
+            font-family: 'Noto Sans KR', sans-serif; font-size: 0.55rem; font-weight: 700;
+            padding: 1px 5px; border-radius: 2px; letter-spacing: 0.5px;
+            text-transform: uppercase; display: inline-block;
+        }
+        .badge-red { border: 1px solid var(--red-wine); color: var(--red-wine); }
+        .badge-white { border: 1px solid var(--white-wine); color: var(--white-wine); }
+
+        /* Pricing */
+        .price-box { text-align: right; min-width: 90px; margin-left: 15px; }
+        .price-row { display: block; line-height: 1.4; white-space: nowrap; }
+        .price-label { font-size: 0.65rem; color: var(--meta-text); text-transform: uppercase; margin-right: 4px; font-weight: 600; }
+        .price-value { font-size: 1.15rem; font-weight: 700; color: var(--text-main); }
+        .glass-price .price-value { color: var(--accent); }
+
+        .wine-info { font-size: 0.95rem; color: #333; margin: 12px 0 8px 0; }
+        .rating-inline { font-weight: 700; color: var(--accent); font-size: 0.9rem; margin-left: 5px; }
+        .tasting-notes { font-size: 0.85rem; color: #666; font-style: italic; background: rgba(141, 115, 74, 0.04); padding: 10px 15px; border-radius: 4px; }
+
+        footer { text-align: center; padding: 60px 20px; background: #F4F1EA; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+<nav class="sticky-nav">
+    <a href="#comfort">Comfort</a>
+    <a href="#refined">Refined</a>
+    <a href="#special">Special</a>
+</nav>
+
+<header>
+    <h1>The Mist Sapa</h1>
+    <div class="philosophy">A collection of moments curated in the misty gardens of Sapa.</div>
+</header>
+
+<div class="container">
+    
+    <section id="comfort" class="category-section">
+        <div class="category-header">
+            <div class="category-name">Comfort</div>
+            <span class="category-desc">Reliable and comfortable choices</span>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Chile / Rapel Valley</span><span class="divider">|</span><span class="variety">Carmenere</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>FORTUNATTO CARMENERE 2022</div>
+                <div class="price-box">
+                    <div class="price-row"><span class="price-label">Bottle</span><span class="price-value">380K</span></div>
+                    <div class="price-row glass-price"><span class="price-label">Glass</span><span class="price-value">110K</span></div>
+                </div>
+            </div>
+            <div class="wine-info">A juicy and smooth wine showcasing signature Chilean Carmenere.</div>
+            <div class="tasting-notes">Notes: Ripe plum, blackberry, and subtle spices.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Chile / Central Valley</span><span class="divider">|</span><span class="variety">Cabernet Sauvignon, Syrah</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>MOSQUETEROS SUPERIOR 2023</div>
+                <div class="price-box">
+                    <div class="price-row"><span class="price-label">Bottle</span><span class="price-value">430K</span></div>
+                    <div class="price-row glass-price"><span class="price-label">Glass</span><span class="price-value">130K</span></div>
+                </div>
+            </div>
+            <div class="wine-info">A fresh and vibrant medium-bodied wine, perfect for casual sipping.</div>
+            <div class="tasting-notes">Notes: Spicy black cherry and black olives.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Languedoc</span><span class="divider">|</span><span class="variety">Cabernet Sauvignon, Syrah</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>LA CROISADE RESERVE 2024</div>
+                <div class="price-box">
+                    <div class="price-row"><span class="price-label">Bottle</span><span class="price-value">450K</span></div>
+                    <div class="price-row glass-price"><span class="price-label">Glass</span><span class="price-value">135K</span></div>
+                </div>
+            </div>
+            <div class="wine-info">A rich and flavorful daily red that captures the Southern French sun.</div>
+            <div class="tasting-notes">Notes: Dark berries, spices, and a touch of oak.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Chile / Rapel Valley</span><span class="divider">|</span><span class="variety">Sauvignon Blanc</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-white"></span><span class="type-badge badge-white">White</span>FORTUNATTO SAUVIGNON BLANC 2023</div>
+                <div class="price-box">
+                    <div class="price-row"><span class="price-label">Bottle</span><span class="price-value">380K</span></div>
+                    <div class="price-row glass-price"><span class="price-label">Glass</span><span class="price-value">110K</span></div>
+                </div>
+            </div>
+            <div class="wine-info">A zesty and refreshing white wine with a crisp finish.</div>
+            <div class="tasting-notes">Notes: Citrus, green apple, and tropical fruits.</div>
+        </div>
+    </section>
+
+    <section id="refined" class="category-section">
+        <div class="category-header">
+            <div class="category-name">Refined</div>
+            <span class="category-desc">A step further into depth and elegance</span>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Chile / Rapel Valley</span><span class="divider">|</span><span class="variety">Carmenere</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>FORTUNATTO GRAN RESERVA 2019</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">560K</span></div></div>
+            </div>
+            <div class="wine-info">A premium red aged to perfection with a velvety texture. <span class="rating-inline">[JS 93]</span></div>
+            <div class="tasting-notes">Notes: Blueberry, dried herbs, tobacco.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Chile / Central Valley</span><span class="divider">|</span><span class="variety">Cabernet Sauvignon</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>MOSQUETEROS GRAN RESERVA 2022</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">640K</span></div></div>
+            </div>
+            <div class="wine-info">Good balance of ripe black fruit aromas, soft yet firm tannins, and fresh acidity.</div>
+            <div class="tasting-notes">Notes: Blackcurrant, chocolate, smoke.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Bordeaux</span><span class="divider">|</span><span class="variety">Merlot, Cab Sauv, Cab Franc</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>GAIA DE CHATEAU PUYBARBE</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">780K</span></div></div>
+            </div>
+            <div class="wine-info">An elegant Right Bank-style blend with sophisticated tannins.</div>
+            <div class="tasting-notes">Notes: Blackberry, white pepper, minerals.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Languedoc</span><span class="divider">|</span><span class="variety">Syrah, Merlot, Alicante Bouschet</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>DOMAINE SAINT - ANDRE MARITIME</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">560K</span></div></div>
+            </div>
+            <div class="wine-info">Influenced by the coastal climate, refreshing acidity and vibrant fruitiness. <span class="rating-inline">[G&G Gold]</span></div>
+            <div class="tasting-notes">Notes: Mediterranean berries, light spices.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Rhone</span><span class="divider">|</span><span class="variety">Grenache, Syrah, Mourvedre</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>XAVIER VIGNON - VENTOUX 2021</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">780K</span></div></div>
+            </div>
+            <div class="wine-info">Master Xavier Vignon's creation with exceptional freshness and balance. <span class="rating-inline">[JS 90]</span></div>
+            <div class="tasting-notes">Notes: Red fruits, Provence herbs, pepper.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Italy / Puglia</span><span class="divider">|</span><span class="variety">Negroamaro, Malvasia Nera</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>SALICE SALENTINO DOP ROSSO</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">710K</span></div></div>
+            </div>
+            <div class="wine-info">Warm fruit aromas with a soft texture of Southern Italy. <span class="rating-inline">[Vivino 3.9]</span></div>
+            <div class="tasting-notes">Notes: Cherry, plum, Mediterranean herbs.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Italy / Puglia</span><span class="divider">|</span><span class="variety">Primitivo</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>AURO PRIMITIVO DI MANDURIA</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">990K</span></div></div>
+            </div>
+            <div class="wine-info">Full-bodied, soft tannins, ripe fruit, and oak flavors in harmony. <span class="rating-inline">[Vivino 4.1]</span></div>
+            <div class="tasting-notes">Notes: Plum, vanilla, licorice.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Italy / Puglia</span><span class="divider">|</span><span class="variety">Negroamaro, Syrah</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>A PASSO LENTO IGP ROSSO</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">800K</span></div></div>
+            </div>
+            <div class="wine-info">Appassimento style for a richer, deeper taste. <span class="rating-inline">[Vivino 4.1]</span></div>
+            <div class="tasting-notes">Notes: Blackberry, raspberry, smoke.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Chile / Central Valley</span><span class="divider">|</span><span class="variety">Chardonnay</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-white"></span><span class="type-badge badge-white">White</span>MOSQUETEROS RESERVA CHARDONNAY</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">640K</span></div></div>
+            </div>
+            <div class="wine-info">Smooth texture and beautifully balanced acidity.</div>
+            <div class="tasting-notes">Notes: Ripe apple, pear, peach.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Languedoc</span><span class="divider">|</span><span class="variety">Chardonnay</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-white"></span><span class="type-badge badge-white">White</span>DOMAINE SAINT - ANDRE CHARDONNAY</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">700K</span></div></div>
+            </div>
+            <div class="wine-info">A classic French Chardonnay with a creamy mouthfeel.</div>
+            <div class="tasting-notes">Notes: Ripe pear, jasmine, quince.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Languedoc</span><span class="divider">|</span><span class="variety">Sauvignon Blanc</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-white"></span><span class="type-badge badge-white">White</span>DOMAINE SAINT - ANDRE SAUVIGNON</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">700K</span></div></div>
+            </div>
+            <div class="wine-info">Aromatic white wine with delightful citrus and herbal notes.</div>
+            <div class="tasting-notes">Notes: Citrus, cut grass, lime.</div>
+        </div>
+    </section>
+
+    <section id="special" class="category-section">
+        <div class="category-header">
+            <div class="category-name">Special</div>
+            <span class="category-desc">Deep flavors perfected through special process</span>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>France / Rhone</span><span class="divider">|</span><span class="variety">Grenache, Cinsault, Mourvedre</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>ARCANE - LE FORTUNE ROUGE BIO</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">1,700K</span></div></div>
+            </div>
+            <div class="wine-info">An organic wine that delivers the pure essence of the fruit with an elegant, lingering finish. <span class="rating-inline">[Decanter 93]</span></div>
+            <div class="tasting-notes">Notes: Red flowers, saffron, raspberry.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Italy / Chianti</span><span class="divider">|</span><span class="variety">Sangiovese</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>QUERCIAVALLE CHIANTI CLASSICO DOCG 2020</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">1,500K</span></div></div>
+            </div>
+            <div class="wine-info">A traditional Tuscan classic with well-balanced fruit aromas, tannins and good structure. <span class="rating-inline">[Decanter 92 / JS 92]</span></div>
+            <div class="tasting-notes">Notes: Red cherry, violets, earthy undertones.</div>
+        </div>
+
+        <div class="wine-item">
+            <div class="wine-meta"><span>Italy / Veneto</span><span class="divider">|</span><span class="variety">Corvina, Corvinone, Rondinella, Molinara</span></div>
+            <div class="wine-header">
+                <div class="wine-name"><span class="wine-dot dot-red"></span><span class="type-badge badge-red">Red</span>MONTECORNA VALPOLICELLA RIPASSO</div>
+                <div class="price-box"><div class="price-row"><span class="price-label">Bottle</span><span class="price-value">1,630K</span></div></div>
+            </div>
+            <div class="wine-info">A premium Ripasso wine with rich, complex flavors that blend well with ripe fruit jam and spicy notes. <span class="rating-inline">[WE 93]</span></div>
+            <div class="tasting-notes">Notes: Cherry jam, roasted coffee, leather.</div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    &copy; The Mist Sapa Wine Garden<br>
+    Prices in VND ('000 omitted).<br>
+    Service charge and VAT are included.
+</footer>
+
+</body>
+</html>
